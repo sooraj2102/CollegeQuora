@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "568527862241",
+    "firebase_url": "https://kietmessenger.firebaseio.com",
+    "project_id": "kietmessenger",
+    "storage_bucket": "kietmessenger.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:568527862241:android:273dae39d46c8387",
+        "android_client_info": {
+          "package_name": "soorajshingari.kietmessenger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "568527862241-2u8b03anqbnkdp23dl6csmml1cveimg8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_1idyO_bfFu7nNUjwyck1fkyW6rYXVXU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
