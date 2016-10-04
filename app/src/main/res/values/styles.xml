@@ -12,6 +12,7 @@
 <style name="loginTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
     <item name="colorAccent">#ffffff</item>
     <item name="colorPrimary">#ffffff</item>
+    <item name="colorPrimaryDark">#ffffff</item>
 
 
 </style>

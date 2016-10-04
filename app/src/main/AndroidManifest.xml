@@ -38,9 +38,10 @@
         <activity
             android:name=".Post"
             android:label="@string/title_activity_post"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity android:name=".CreatePost"
-            android:parentActivityName=".Post"></activity>
+            android:parentActivityName=".Post"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
     </application>
 
 </manifest>

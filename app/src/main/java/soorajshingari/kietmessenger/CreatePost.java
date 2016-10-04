@@ -1,5 +1,6 @@
 package soorajshingari.kietmessenger;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -15,6 +16,7 @@ EditText subject,body;
         Toolbar toolbar=(Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         setTitle("Create Post");
+        setTitleColor(Color.WHITE);
         subject=(EditText)findViewById(R.id.editText);
         body=(EditText)findViewById(R.id.editText2);
         string_subject=subject.getText().toString();
