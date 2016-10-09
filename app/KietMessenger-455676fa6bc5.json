@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "kietmessenger",
+  "private_key_id": "455676fa6bc54f7b01f80264515b08e954323cb3",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQClUVXYpgqG7WNj\nRaRL2TIPQYNYLMPq95vlgDFLWiGCHrN31SaLcyCjP9SwiPwTzNzcpZQGZTC+WsBN\n9js9cTEVuNRrnqjnWmNXl2CQld2psXTN/llMPG7VcJh4CuJGQgciXhuqP8T8carp\nQ69E81Fux3A5Gicz2szHCUbWMag3VpuFdTl3hXkg2i8XoFOT/6nZk+gOzOXdGXnv\nmi8jqOtP8ZFay0jojkHcLqT1oKnW1Zf6qP12c5SJyQiA3OqniJFFDe+8tVNalH43\nJj+8h9BaygJjLWxCIos1J4pdqzIz/qTIQUa/WAas80txKBiiur+DqprvYy8Q8sBp\n9sHIDEY7AgMBAAECggEAMXixk++8XrxTbbW9gOUyUdZtE8nxpzMJ+BfwqHgEZwgA\n9O9YZYrCTZggcePMa7B2t6DlNzS47X4C5lG1UKG66qExEDOen/0wlVm7kAkJGGr+\nZVakKmg7UqwrNGEtbZD8yZAX/06uCE2Ls9qJbLzTta8BKlVlPeNQPI/OHvMlP8mz\n9t6xhrIpf2svXyRPFZJi/mEbk0jS4t4w+D8awXQT7qKJIgcf3s8BPmzgDMKyz2wX\nIaUMI+ocvFQPJBkiVcLHW2/g4gqZ58RGPz3p7x03xpttX9XtbjF2vXkG+8BEefnn\nFWERGzkANyZ7ocKYXnTBG4yr2qJp8A5nalb21ojFAQKBgQDUrVWApOsirDcIPph+\ncjHgWvIj1n3auWys9mnC696vFF6IP1PcHFUtk33xqVqWK96DBgalGsSqn97xqnsX\nsqvtqq6F5r9iadF80XMVGZStBfeGMvEcOwuV+mwA2DkiHDfmf84wo3DgLzApBYBH\nz+yAyi/zp8IUC1aM1yxb+kL5mwKBgQDG/k8gSmIncX7hKlSOdqFzcBAr24Vryh2i\ni2/FIRezgPw/ZsESmczJ9132eYGoSlVYVwBAvs5jvzGgus9jIX1InoHsB583WEWC\n8aDgbbQhqa26OhzqhjC9Kqdt4/XzIzts5HW3ftGlXeCL1dPbCyD0vB5mpjWk1PF4\n2aoqu0F/4QKBgQCeegcDlGCOdquPXi1905Qs7TgP0m33xUIg5IFMuTw3VENY3W+c\nzhP+oTAxGpQg4NGu6pebAgZYakbT58hPkVkiAZSIvLgSGm36x4wsxeIOyCp4+o7G\nDY2FlZRTUMvKCiLxhHzdq3yZ4S/O8YV0fZBrK75tnq01CHnW+yPX6fVsTwKBgG7g\n4uwGJlz+A4mpEYZ0GY/+ADS/07701sBsW3IG93Lgyyz0r14S7qYWvHeKyrEgAiAA\nEjcBWnT/4sJBdS8ySOG+2HvQ32lyOQE2a8LBvd4H8rJSkSwoa13sN3Cm1bONjR4m\nymTdOCmhfm3MToi90bYsX/AoarmWoZoKBqRaxKthAoGBAJGFTXNtPsvxGzEr7jCY\n76Hc9JYYAAEk/As/K00xqLUNTupQRKKU7XgHze3YsPAeoc+Lg5DzCM4G+Pa/l6Qu\nef0eTD7iuhaZbnilH/uMThS3J29Q/tRLWMdmNyjHo4YhnZztK7PSu6H0KS+HOV4H\nsbogEMsrJltQYnpTV4cUTtOi\n-----END PRIVATE KEY-----\n",
+  "client_email": "collegequora@kietmessenger.iam.gserviceaccount.com",
+  "client_id": "108950495544581437950",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/collegequora%40kietmessenger.iam.gserviceaccount.com"
+}

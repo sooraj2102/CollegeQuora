@@ -10,52 +10,71 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.firebase.client.Firebase;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
 
 public class dashboard extends AppCompatActivity {
-
+DatabaseReference databaseReference;
+    FirebaseAuth firebaseAuth=FirebaseAuth.getInstance();
+    FirebaseAuth.AuthStateListener authStateListener;
+    EditText username,password;
+    String user,pass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
-        EditText username,password;
-        final String user,pass;
+
+
         username=(EditText)findViewById(R.id.user);
         password=(EditText)findViewById(R.id.pass);
-            user = username.getText().toString();
-            pass = password.getText().toString();
-            Button login = (Button) findViewById(R.id.login);
+
+            Button login = (Button) findViewById(R.id.signup);
             login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                user = username.getText().toString()+"@gmail.com";
+                pass = password.getText().toString();
                 final ProgressDialog progressDialog=new ProgressDialog(dashboard.this);
                 progressDialog.setCancelable(false);
                 progressDialog.setMessage("Authenticating...");
-                progressDialog.show();
-                Thread thread=new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            Thread.sleep(2000);
+                if (user.length()==0) {
+                    //Log.d("Register",s_username.length()+"");
+                    username.setError("Required Field!");
+                }
+                if (pass.length()==0) {
+                    // Log.d("Register",s_pass.length()+"");
+                    password.setError("Required Field!");
+                }
+                else {
+                    progressDialog.show();
+                    firebaseAuth.signInWithEmailAndPassword(user, pass).addOnCompleteListener(dashboard.this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
 
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }finally {
-                            progressDialog.cancel();
-                            startActivity(new Intent(dashboard.this,Post.class));
-                            finish();
+                            if (task.isSuccessful()) {
+                                progressDialog.dismiss();
+                                startActivity(new Intent(dashboard.this, Post.class));
+                                finish();
+                            } else {
+                                progressDialog.dismiss();
+                                Toast.makeText(dashboard.this, "Wrong credentials", Toast.LENGTH_SHORT).show();
+                                password.setText("");
+                                username.setText("");
+                            }
+
                         }
-                    }
-                });
-                thread.start();
+                    });
+                }
 
-                        }
 
-                });
+
+
+            }
+
+            });
 
             }
 

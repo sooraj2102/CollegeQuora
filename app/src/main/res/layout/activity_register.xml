@@ -10,8 +10,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="soorajshingari.kietmessenger.dashboard">
-
+    tools:context="soorajshingari.kietmessenger.Register">
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,7 +24,7 @@
             android:layout_height="wrap_content"
             android:textColorHint="#ffffff"
             android:textColor="#ffffff"
-            android:hint="Username"
+            android:hint="Enter your PORTAL Username"
             android:id="@+id/user"
             style="@style/Theme.AppCompat"
             android:inputType="number" />
@@ -36,7 +35,7 @@
         android:paddingTop="10dp"
         style="@style/Theme.AppCompat"
         android:id="@+id/password"
-        android:layout_above="@+id/signup"
+        android:layout_above="@+id/confirmpassword"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true">
         <EditText
@@ -49,16 +48,37 @@
             android:id="@+id/pass"
             />
     </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        style="@style/Theme.AppCompat"
+        android:id="@+id/confirmpassword"
+        android:layout_above="@+id/signup"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+        <EditText
+            android:layout_width="match_parent"
+            android:inputType="textPassword"
+            android:layout_height="wrap_content"
+            android:textColorHint="#ffffff"
+            android:textColor="#ffffff"
+            android:hint="Confirm Password"
+            android:id="@+id/confirmpass"
+            />
+    </android.support.design.widget.TextInputLayout>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/signup"
-           android:text="Login"
-           android:textColor="#ffffff"
-           android:background="#6600ff"
+        android:text="Sign Up"
+        android:textColor="#ffffff"
+        android:background="#6600ff"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="109dp" />
+
 
 </RelativeLayout>

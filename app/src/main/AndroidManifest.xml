@@ -29,19 +29,23 @@
         <activity
             android:name=".dashboard"
             android:theme="@style/loginTheme">
+        </activity>
+        <activity
+            android:name=".Post"
+            android:label="@string/title_activity_post"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".CreatePost"
+            android:parentActivityName=".Post"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".Are_you_new">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Post"
-            android:label="@string/title_activity_post"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <activity android:name=".CreatePost"
-            android:parentActivityName=".Post"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+        <activity android:name=".Register"></activity>
     </application>
 
 </manifest>

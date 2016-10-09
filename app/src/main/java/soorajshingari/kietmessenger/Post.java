@@ -121,7 +121,7 @@ public class Post extends AppCompatActivity {
         else if(id==R.id.log_out)
         {
             FirebaseAuth.getInstance().signOut();
-            startActivity(new Intent(Post.this,dashboard.class));
+            startActivity(new Intent(Post.this,Are_you_new.class));
             finish();
         }
 
