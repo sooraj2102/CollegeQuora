@@ -54,10 +54,10 @@ authStateListener=new FirebaseAuth.AuthStateListener() {
         findViewById(R.id.signup).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                s_username=username.getText().toString()+"@gmail.com";
-                s_pass=pass.getText().toString();
-                s_confirm_pass=confrim_pass.getText().toString();
-                if (s_username.length()==0) {
+                s_username=username.getText().toString().trim()+"@gmail.com";
+                s_pass=pass.getText().toString().trim();
+                s_confirm_pass=confrim_pass.getText().toString().trim();
+                if (s_username.length()==10) {
                //Log.d("Register",s_username.length()+"");
                     username.setError("Required Field!");
                 }
@@ -70,8 +70,8 @@ authStateListener=new FirebaseAuth.AuthStateListener() {
                     confrim_pass.setError("Required Field!");
                 }
                 if(s_pass.length()<6)
-                    pass.setError("Password should be greater than 6 characters");
-                if(s_pass.equals(s_confirm_pass) && !(s_confirm_pass.length()==0) && !(s_pass.length()==0))
+                    pass.setError("Password should contain minimum 6 characters");
+                if(s_pass.equals(s_confirm_pass)&& s_pass.length()>5)
                 {
                     progressDialog.show();
                     firebaseAuth.createUserWithEmailAndPassword(s_username,s_pass).addOnCompleteListener(Register.this,new OnCompleteListener<AuthResult>() {

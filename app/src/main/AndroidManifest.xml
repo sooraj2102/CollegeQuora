@@ -33,11 +33,12 @@
         <activity
             android:name=".Post"
             android:label="@string/title_activity_post"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".CreatePost"
+            android:label="Create Post"
             android:parentActivityName=".Post"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
         <activity android:name=".Are_you_new">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -46,6 +47,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Register"></activity>
+        <activity android:name=".Comments" android:theme="@style/Theme.AppCompat.Light.DarkActionBar" android:label="Comments"></activity>
     </application>
 
 </manifest>

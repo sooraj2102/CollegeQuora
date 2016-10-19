@@ -27,12 +27,14 @@ FirebaseAuth firebaseAuth;
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Are_you_new.this,dashboard.class));
+                finish();
             }
         });
         yes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Are_you_new.this,Register.class));
+                finish();
             }
         });
     }

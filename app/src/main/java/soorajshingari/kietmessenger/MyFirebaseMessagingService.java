@@ -27,10 +27,10 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 .setContentTitle("College Quora")
                 .setContentTitle(remoteMessage.getNotification().getBody())
                 .setAutoCancel(true)
-                .setSound(notificationSoundUri)
-                .setContentIntent(resultIntent);
+                .setSound(notificationSoundUri).setContentIntent(resultIntent);
         NotificationManager notificationManager=(NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
         notificationManager.notify(0,notificationBuilder.build());
+
 
     }
 }
