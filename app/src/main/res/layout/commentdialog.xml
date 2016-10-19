@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_height="200dp"
+            android:layout_width="match_parent"
+            android:padding="5dp"
+            android:hint="Type your Comment...."
+            android:textAlignment="center"
+            />
+
+        <android.support.v7.widget.AppCompatButton
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="#1A237E"
+            android:layout_marginTop="250dp"
+            android:id="@+id/answer"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#ffff"
+            android:text="Submit"/>
+
+        </android.support.v7.widget.CardView>
+
+
+</LinearLayout>
