@@ -40,7 +40,7 @@ DatabaseReference databaseReference;
                 final ProgressDialog progressDialog=new ProgressDialog(dashboard.this);
                 progressDialog.setCancelable(false);
                 progressDialog.setMessage("Authenticating...");
-                if (user.length()==0) {
+                if (user.length()==10) {
                     //Log.d("Register",s_username.length()+"");
                     username.setError("Required Field!");
                 }

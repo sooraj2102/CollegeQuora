@@ -7,7 +7,8 @@ package soorajshingari.kietmessenger;
         import android.graphics.RectF;
         import android.graphics.drawable.Drawable;
         import android.net.Uri;
-        import android.transition.Transition;
+        //import soorajshingari.kietmessenger.Transition;
+        import android.transition.*;
         import android.util.AttributeSet;
         import android.widget.ImageView;
 

@@ -23,7 +23,7 @@ package soorajshingari.kietmessenger;
 
         import java.util.Random;
 
-public class RandomTransitionGenerator implements com .kenburnsview.TransitionGenerator {
+public class RandomTransitionGenerator implements soorajshingari.kietmessenger.TransitionGenerator {
 
     /** Default value for the transition duration in milliseconds. */
     public static final int DEFAULT_TRANSITION_DURATION = 10000;
@@ -83,8 +83,7 @@ the last transition. */
         }
         dstRect = generateRandomRect(drawableBounds, viewport);
 
-        mLastGenTrans = new Transition(srcRect, dstRect, mTransitionDuration,
-                mTransitionInterpolator);
+        mLastGenTrans = new Transition(srcRect, dstRect, mTransitionDuration,mTransitionInterpolator);
 
         mLastDrawableBounds = drawableBounds;
 

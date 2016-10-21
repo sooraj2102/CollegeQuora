@@ -1,4 +1,4 @@
-package soorajshingari.kietmessenger.MathUtils;
+package soorajshingari.kietmessenger;
 /*
 * Copyright 2014 Flavio Faria
 *
