@@ -2,6 +2,7 @@ package soorajshingari.kietmessenger;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Handler;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -24,11 +25,13 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.firebase.client.Firebase;
+import com.firebase.client.Transaction;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Post extends AppCompatActivity {
 
     private FragmentPagerAdapter mSectionsPagerAdapter;
+    boolean doubleBackPress=false;
 
     private ViewPager mViewPager;
     Fragment fragment;
@@ -42,7 +45,11 @@ public class Post extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        if(!NetworkCheck.isNetworkAvailable(Post.this))
+        {
+            Snackbar.make(findViewById(android.R.id.content),"Check Your Internet Connection!",Snackbar.LENGTH_LONG)
+                    .setAction("Retry",null).show();
+        }
         mSectionsPagerAdapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
             Fragment[] fragment=new Fragment[]{
                     new MyPost(),
@@ -82,8 +89,9 @@ public class Post extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+               // Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                 //       .setAction("Action", null).show();
+                startActivity(new Intent(Post.this,CreatePost.class));
             }
         });
 
@@ -100,7 +108,7 @@ public class Post extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.action_settings) {
+       /* if (id == R.id.action_settings) {
 
             startActivity(new Intent(this,Comments.class));
         }
@@ -108,7 +116,8 @@ public class Post extends AppCompatActivity {
         {
             startActivity(new Intent(Post.this,CreatePost.class));
         }
-        else if(id==R.id.log_out)
+      */
+         if(id==R.id.log_out)
         {
             new AlertDialog.Builder(this)
                     .setTitle("Log Out")
@@ -133,7 +142,23 @@ public class Post extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onBackPressed() {
+        if(doubleBackPress)
+        {
+            super.onBackPressed();
+        }
+        else
+        {
+            doubleBackPress=true;
+         new Handler().postDelayed(new Runnable() {
+             @Override
+             public void run() {
+              doubleBackPress=false;
+             }
+         },2000);
+            Snackbar.make(findViewById(android.R.id.content),"Press again to exit",Snackbar.LENGTH_LONG).setAction("Action",null).show();
+        }
 
-
-
+    }
 }

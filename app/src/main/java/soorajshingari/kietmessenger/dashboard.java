@@ -3,6 +3,7 @@ package soorajshingari.kietmessenger;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -40,6 +41,7 @@ DatabaseReference databaseReference;
                 final ProgressDialog progressDialog=new ProgressDialog(dashboard.this);
                 progressDialog.setCancelable(false);
                 progressDialog.setMessage("Authenticating...");
+                progressDialog.setCancelable(false);
                 if (user.length()==10) {
                     //Log.d("Register",s_username.length()+"");
                     username.setError("Required Field!");
@@ -49,24 +51,33 @@ DatabaseReference databaseReference;
                     password.setError("Required Field!");
                 }
                 else {
-                    progressDialog.show();
-                    firebaseAuth.signInWithEmailAndPassword(user, pass).addOnCompleteListener(dashboard.this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
+                    if(!NetworkCheck.isNetworkAvailable(dashboard.this)) {
+                        Snackbar.make(findViewById(android.R.id.content), "Check Your Internet Connection!", Snackbar.LENGTH_LONG)
+                                .setAction("Retry", null).show();
+                    }
+                    else {
+                        progressDialog.show();
+                        firebaseAuth.signInWithEmailAndPassword(user, pass).addOnCompleteListener(dashboard.this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
 
-                            if (task.isSuccessful()) {
-                                progressDialog.dismiss();
-                                startActivity(new Intent(dashboard.this, Post.class));
-                                finish();
-                            } else {
-                                progressDialog.dismiss();
-                                Toast.makeText(dashboard.this, "Wrong credentials", Toast.LENGTH_SHORT).show();
-                                password.setText("");
-                                username.setText("");
+
+                                if (task.isSuccessful()) {
+                                    progressDialog.dismiss();
+                                    startActivity(new Intent(dashboard.this, Post.class));
+                                    finish();
+                                } else {
+
+                                    progressDialog.dismiss();
+                                    Toast.makeText(dashboard.this, "Wrong credentials", Toast.LENGTH_SHORT).show();
+                                    password.setText("");
+                                    username.setText("");
+
+                                }
+
                             }
-
-                        }
-                    });
+                        });
+                    }
                 }
 
 

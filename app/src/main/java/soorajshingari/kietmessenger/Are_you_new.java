@@ -1,6 +1,7 @@
 package soorajshingari.kietmessenger;
 
 import android.content.Intent;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +16,11 @@ FirebaseAuth firebaseAuth;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_are_you_new);
         firebaseAuth=FirebaseAuth.getInstance();
+        if(!NetworkCheck.isNetworkAvailable(Are_you_new.this))
+        {
+            Snackbar.make(findViewById(android.R.id.content),"Check Your Internet Connection!",Snackbar.LENGTH_LONG)
+                    .setAction("Retry",null).show();
+        }
        if(firebaseAuth.getCurrentUser()!=null)
         {
             startActivity(new Intent(this,Post.class));

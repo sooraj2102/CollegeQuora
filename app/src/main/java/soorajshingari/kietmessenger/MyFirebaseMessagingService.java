@@ -23,7 +23,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         PendingIntent resultIntent=PendingIntent.getActivity(this,0,intent,PendingIntent.FLAG_ONE_SHOT);
         Uri notificationSoundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder notificationBuilder=new NotificationCompat.Builder(this);
-        notificationBuilder.setSmallIcon(R.mipmap.ic_launcher)
+        notificationBuilder.setSmallIcon(R.drawable.collegequora)
                 .setContentTitle("College Quora")
                 .setContentTitle(remoteMessage.getNotification().getBody())
                 .setAutoCancel(true)

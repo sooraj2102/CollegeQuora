@@ -8,35 +8,45 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 <android.support.v7.widget.RecyclerView
-    android:layout_width="wrap_content"
+    android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:id="@+id/recyclerview_comments">
 </android.support.v7.widget.RecyclerView>
-
-
-    <EditText
-
-        android:padding="10dp"
-        android:layout_marginBottom="0dp"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:focusableInTouchMode="true"
-        android:id="@+id/editText_comment"
-        android:layout_marginEnd="95dp"
-        android:layout_gravity="left|bottom"
-        android:layout_marginRight="5dp" />
-    <Button
-        android:background="@drawable/background"
-        android:textColor="#ffffff"
-        android:layout_margin="5dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="send"
-        android:id="@+id/button"
-        android:layout_gravity="right|bottom" />
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
+        <EditText
+
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusableInTouchMode="true"
+            android:id="@+id/editText_comment"
+            android:layout_gravity="left|bottom"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_toLeftOf="@+id/submit_comment"
+            android:layout_toStartOf="@+id/submit_comment" />
+        <Button
+            android:background="@drawable/background"
+            android:textColor="#ffffff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="send"
+            android:layout_marginBottom="6dp"
+            android:id="@+id/submit_comment"
+            android:layout_gravity="right|bottom"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
 </android.support.design.widget.CoordinatorLayout>
-
 
 
 </RelativeLayout>

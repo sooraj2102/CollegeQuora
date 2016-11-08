@@ -9,5 +9,5 @@ import android.widget.Button;
 public class singlePostCard {
     int image;
     String question,personName;
-    Button answer;
+    //Button answer;
 }

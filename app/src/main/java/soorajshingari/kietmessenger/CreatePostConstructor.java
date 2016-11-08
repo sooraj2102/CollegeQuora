@@ -11,11 +11,12 @@ import java.util.Map;
  */
 @IgnoreExtraProperties
 public class CreatePostConstructor {
-public String PostSubject,PostBody,Uid;
-    public CreatePostConstructor(String postSubject, String postBody,String uid) {
+public String PostSubject,PostBody,Uid,key;
+    public CreatePostConstructor(String postSubject, String postBody,String uid,String key) {
         PostSubject = postSubject;
         PostBody = postBody;
         Uid=uid;
+        this.key=key;
     }
     @Exclude
    public Map<String,Object> toMap() {
@@ -23,6 +24,7 @@ public String PostSubject,PostBody,Uid;
         result.put("uid",Uid);
         result.put("Subject",PostSubject);
         result.put("Body",PostBody);
+        result.put("Key",key);
         return result;
     }
 }

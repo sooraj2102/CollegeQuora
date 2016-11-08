@@ -3,6 +3,7 @@ package soorajshingari.kietmessenger;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -51,6 +52,7 @@ authStateListener=new FirebaseAuth.AuthStateListener() {
 
         final ProgressDialog progressDialog=new ProgressDialog(this);
         progressDialog.setMessage("Signing up...");
+        progressDialog.setCancelable(false);
         findViewById(R.id.signup).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,33 +75,38 @@ authStateListener=new FirebaseAuth.AuthStateListener() {
                     pass.setError("Password should contain minimum 6 characters");
                 if(s_pass.equals(s_confirm_pass)&& s_pass.length()>5)
                 {
-                    progressDialog.show();
-                    firebaseAuth.createUserWithEmailAndPassword(s_username,s_pass).addOnCompleteListener(Register.this,new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
+                    if(!NetworkCheck.isNetworkAvailable(Register.this)) {
+                        Snackbar.make(findViewById(android.R.id.content), "Check Your Internet Connection!", Snackbar.LENGTH_LONG)
+                                .setAction("Retry", null).show();
+                    }
+                else {
+                        progressDialog.show();
+                        firebaseAuth.createUserWithEmailAndPassword(s_username, s_pass).addOnCompleteListener(Register.this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
 
-                            Log.d("Register","0");
+                                Log.d("Register", "0");
+                                if (task.isSuccessful()) {
+                                    progressDialog.dismiss();
+                                    Log.d("Register ", "1");
+                                    Toast.makeText(Register.this, "Successfully registered", Toast.LENGTH_SHORT).show();
+                                    User user = new User(s_username, s_pass);
+                                    firebaseuser = firebaseAuth.getCurrentUser();
+                                    databaseReference.child("users").child(firebaseuser.getUid()).setValue(user);
+                                    startActivity(new Intent(Register.this, Post.class));
+                                    finish();
+                                } else {
+                                    progressDialog.dismiss();
+                                    Log.d("Register", "2");
+                                    Toast.makeText(Register.this, "Error signing up", Toast.LENGTH_SHORT).show();
+                                    // User user=new User(s_username,s_pass);
+                                    //databaseReference.child("users").setValue(user);
 
-                            if(task.isSuccessful())
-                            {progressDialog.dismiss();
-                                Log.d("Register ","1");
-                                Toast.makeText(Register.this, "Successfully registered", Toast.LENGTH_SHORT).show();
-                                User user=new User(s_username,s_pass);
-                                firebaseuser=firebaseAuth.getCurrentUser();
-                                databaseReference.child("users").child(firebaseuser.getUid()).setValue(user);
-                                startActivity(new Intent(Register.this,Post.class));
-                                finish();
+                                }
                             }
-                            else {
-                                progressDialog.dismiss();
-                                Log.d("Register","2");
-                                Toast.makeText(Register.this, "Error signing up", Toast.LENGTH_SHORT).show();
-                               // User user=new User(s_username,s_pass);
-                                //databaseReference.child("users").setValue(user);
 
-                            }
-                        }
-                    });
+                        });
+                    }
                 }
                 if(!s_pass.equals(s_confirm_pass))  {
                     confrim_pass.setError("Your password and confirm password is no matching!");

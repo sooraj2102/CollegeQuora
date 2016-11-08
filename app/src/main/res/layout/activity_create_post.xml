@@ -5,8 +5,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-
     android:layout_height="match_parent"
+    android:layout_marginBottom="20dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="soorajshingari.kietmessenger.CreatePost">
     <TextView
@@ -16,7 +16,6 @@
         android:text="Subject of your query"
         android:padding="5dp"
         android:id="@+id/textView2"
-
         android:layout_marginTop="40dp"
         android:layout_below="@+id/toolbar"
         android:layout_alignLeft="@+id/toolbar"
@@ -60,6 +59,13 @@
             android:layout_below="@id/editText2"
             android:layout_marginTop="20dp"
             android:text="Choose an image\n(optional)"/>
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/photo"
+        android:foregroundGravity="center"
+        android:layout_below="@+id/button_image"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:background="@drawable/background"
@@ -68,8 +74,7 @@
         android:layout_height="wrap_content"
         android:text="Submit"
         android:id="@+id/submit"
-        android:layout_below="@id/button_image"
-        android:layout_marginTop="100dp"
+        android:layout_below="@+id/photo"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
