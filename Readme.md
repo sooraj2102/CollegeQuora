@@ -1,2 +1,1 @@
-Just For pull requests
-#hacking
+#hacktoberfest
