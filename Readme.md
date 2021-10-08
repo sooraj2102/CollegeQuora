@@ -1,2 +1,0 @@
-#hacktoberfest
-#HACKTOBERFEST2020
