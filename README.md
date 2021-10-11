@@ -1,9 +1,6 @@
 
 # CollegeQuora
 
-hi
-
-
 
 
 
